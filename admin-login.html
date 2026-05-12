@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login – MVXU</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-login-page">
+    <div class="admin-login-card">
+
+      <div class="admin-login-logo">
+        <img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" />
+        <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.3);letter-spacing:1px;">ADMIN</span>
+      </div>
+
+      <div class="admin-login-heading">
+        <h1>Welcome back</h1>
+        <p>Sign in to access the admin panel.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="email">Email</label>
+          <input type="email" id="email" class="admin-form-input" placeholder="admin@mvxu.com" />
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="password">Password</label>
+          <input type="password" id="password" class="admin-form-input" placeholder="••••••••" />
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button class="admin-login-btn" onclick="window.location.href='admin-dashboard.html'">SIGN IN</button>
+        <a href="login.html" class="admin-login-back">← Back to customer login</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

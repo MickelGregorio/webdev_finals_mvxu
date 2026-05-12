@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Products – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo">
+        <img src="./logo.png" alt="MVXU" class="logo-img" />
+      </a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H20.4C20.8693 16.009 21.3268 15.8526 21.6925 15.5583C22.0581 15.264 22.3086 14.8504 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+          <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="products-hero">
+    <div class="products-hero-wrap">
+      <img src="./images/allproducts.jpg" alt="All Products" class="products-hero-img" />
+      <div class="products-hero-overlay">
+        <h1>All Products</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="products-filter-bar">
+    <div class="products-filter-inner">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="mouse">Gaming Mouse</button>
+      <button class="filter-btn" data-filter="keyboard">Hall Effect Keyboards</button>
+    </div>
+  </div>
+
+  <!-- PRODUCTS LIST -->
+  <main class="products-page">
+
+    <!-- ========== GAMING MICE ========== -->
+    <div class="products-category-heading" id="mice">
+      <h2>Gaming Mouse</h2>
+      <div class="cat-line"></div>
+    </div>
+
+    <div class="pl-grid">
+
+      <div class="pl-card" data-type="mouse">
+        <div class="pl-img-wrap">
+          <img src="./images/superstrike1.jpg" alt="Superstrike V2" />
+        </div>
+        <div class="pl-info">
+          <div class="pl-badge">Gaming Mouse</div>
+          <h3 class="pl-name">Superstrike V2</h3>
+          <p class="pl-price">Php 11,945.00</p>
+          <p class="pl-desc">Engineered for pure speed, this is our fastest wireless mouse yet — delivering ultra-low latency, instant responsiveness, and precision performance built for competitive play.</p>
+          <div class="pl-specs-mini">
+            <span>Sensor: HERO 2</span>
+            <span>100–44,000 DPI</span>
+            <span>1000 Hz polling</span>
+          </div>
+          <div class="pl-actions">
+            <button class="btn-red btn-auth pl-btn-cart">ADD TO CART
+              <svg width="16" height="16" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:6px;vertical-align:middle">
+                <path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+                <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+              </svg>
+            </button>
+            <a href="./product-mouse.html" class="pl-learn-more">LEARN MORE &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-card" data-type="mouse">
+        <div class="pl-img-wrap">
+          <img src="./images/op18k1.webp" alt="OP1 8K V2 Purple" />
+        </div>
+        <div class="pl-info">
+          <div class="pl-badge">Gaming Mouse</div>
+          <h3 class="pl-name">OP1 8K V2 Purple</h3>
+          <p class="pl-price">Php 9,850.00</p>
+          <p class="pl-desc">A no-compromise symmetrical mouse with 8000 Hz polling and a flawless optical sensor. Every click, every swipe — registered without fail.</p>
+          <div class="pl-specs-mini">
+            <span>8000 Hz polling</span>
+            <span>Optical sensor</span>
+            <span>Symmetrical</span>
+          </div>
+          <div class="pl-actions">
+            <button class="btn-red btn-auth pl-btn-cart">ADD TO CART
+              <svg width="16" height="16" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:6px;vertical-align:middle">
+                <path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+                <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+              </svg>
+            </button>
+            <a href="./product-op1.html" class="pl-learn-more">LEARN MORE &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-card" data-type="mouse">
+        <div class="pl-img-wrap">
+          <img src="./images/mayax1.webp" alt="Lamzu Maya X" />
+        </div>
+        <div class="pl-info">
+          <div class="pl-badge">Gaming Mouse</div>
+          <h3 class="pl-name">Lamzu Maya X</h3>
+          <p class="pl-price">Php 8,200.00</p>
+          <p class="pl-desc">Ultra-lightweight ergo mouse crafted for claw and fingertip grip players who demand low weight without sacrificing sensor accuracy.</p>
+          <div class="pl-specs-mini">
+            <span>Sub-60g weight</span>
+            <span>26K DPI sensor</span>
+            <span>Ergo shape</span>
+          </div>
+          <div class="pl-actions">
+            <button class="btn-red btn-auth pl-btn-cart">ADD TO CART
+              <svg width="16" height="16" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:6px;vertical-align:middle">
+                <path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+                <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+              </svg>
+            </button>
+            <a href="./product-maya.html" class="pl-learn-more">LEARN MORE &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== KEYBOARDS ========== -->
+    <div class="products-category-heading" id="keyboards">
+      <h2>Hall Effect Keyboards</h2>
+      <div class="cat-line"></div>
+    </div>
+
+    <div class="pl-grid">
+
+      <div class="pl-card" data-type="keyboard">
+        <div class="pl-img-wrap">
+          <img src="./images/huntsman1.webp" alt="Huntsman V3 Pro" />
+        </div>
+        <div class="pl-info">
+          <div class="pl-badge pl-badge--kb">Hall Effect</div>
+          <h3 class="pl-name">Huntsman V3 Pro</h3>
+          <p class="pl-price">Php 12,500.00</p>
+          <p class="pl-desc">Full-size tournament keyboard with analog switches and on-the-fly actuation adjustment. Built for players who won't settle for standard.</p>
+          <div class="pl-specs-mini">
+            <span>Analog switches</span>
+            <span>Rapid Trigger</span>
+            <span>1ms latency</span>
+          </div>
+          <div class="pl-actions">
+            <button class="btn-red btn-auth pl-btn-cart">ADD TO CART
+              <svg width="16" height="16" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:6px;vertical-align:middle">
+                <path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+                <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+              </svg>
+            </button>
+            <a href="./product-huntsman.html" class="pl-learn-more">LEARN MORE &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-card" data-type="keyboard">
+        <div class="pl-img-wrap">
+          <img src="./images/wooting1.webp" alt="Wooting 80HE" />
+        </div>
+        <div class="pl-info">
+          <div class="pl-badge pl-badge--kb">Hall Effect</div>
+          <h3 class="pl-name">Wooting 80HE</h3>
+          <p class="pl-price">Php 15,490.00</p>
+          <p class="pl-desc">High-performance 75% gaming keyboard built around Hall Effect magnetic switches, giving you analog input and insanely fast, precise control on every keystroke.</p>
+          <div class="pl-specs-mini">
+            <span>Lekker switches</span>
+            <span>0.1–4.0mm actuation</span>
+            <span>8000 Hz support</span>
+          </div>
+          <div class="pl-actions">
+            <button class="btn-red btn-auth pl-btn-cart">ADD TO CART
+              <svg width="16" height="16" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:6px;vertical-align:middle">
+                <path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+                <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+              </svg>
+            </button>
+            <a href="./product-keyboard.html" class="pl-learn-more">LEARN MORE &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-card" data-type="keyboard">
+        <div class="pl-img-wrap">
+          <img src="./images/atlantis1.webp" alt="Lamzu Atlantis" />
+        </div>
+        <div class="pl-info">
+          <div class="pl-badge pl-badge--kb">Hall Effect</div>
+          <h3 class="pl-name">Lamzu Atlantis</h3>
+          <p class="pl-price">Php 13,750.00</p>
+          <p class="pl-desc">Compact 65% layout with hall-effect switches and gasket mount for that premium typing feel. Every press is tracked at the sub-millimeter level.</p>
+          <div class="pl-specs-mini">
+            <span>65% layout</span>
+            <span>Gasket mount</span>
+            <span>Rapid Trigger</span>
+          </div>
+          <div class="pl-actions">
+            <button class="btn-red btn-auth pl-btn-cart">ADD TO CART
+              <svg width="16" height="16" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:6px;vertical-align:middle">
+                <path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+                <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+              </svg>
+            </button>
+            <a href="./product-atlantis.html" class="pl-learn-more">LEARN MORE &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>SHOP</h4><ul><li><a href="products.html#mice">Gaming Mouse</a></li><li><a href="products.html#keyboards">Hall Effect Keyboards</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="about.html">About Us</a></li></ul></div>
+        <div class="footer-col"><h4>POLICIES</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="payment.html">Payment Guide</a></li><li><a href="tos.html">Terms of Service</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 MVXU</p></div>
+  </footer>
+
+  <script>
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.pl-card');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.type === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

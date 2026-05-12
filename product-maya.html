@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lamzu Maya X – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="bc-sep">&gt;</span>
+    <a href="products.html">Products</a>
+    <span class="bc-sep">&gt;</span>
+    <span>Mouse</span>
+    <span class="bc-sep">&gt;</span>
+    <span>Lamzu Maya X</span>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <main class="pdp-page">
+    <div class="pdp-container">
+
+      <!-- LEFT: Images -->
+      <div class="pdp-images">
+        <div class="pdp-main-img">
+          <img src="./images/mayax1.webp" id="mainImgEl" />
+        </div>
+        <div class="pdp-thumbs">
+          <div class="pdp-thumb active" onclick="switchImg(this, './images/mayax1.webp')">
+            <img src="./images/mayax1.webp" alt="View 1" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/mayax2.webp')">
+            <img src="./images/mayax2.webp" alt="View 2" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/mayax3.webp')">
+            <img src="./images/mayax3.webp" alt="View 3" />
+          </div>
+        </div>
+      </div>
+
+      <!-- MIDDLE: Info -->
+      <div class="pdp-info">
+        <div class="pdp-badge">Gaming Mouse</div>
+        <h1 class="pdp-title">Lamzu Maya X</h1>
+        <p class="pdp-price">Php 8,200.00</p>
+        <p class="pdp-desc">Ultra-lightweight ergonomic mouse engineered for claw and fingertip grip players who demand sub-60g weight without sacrificing sensor accuracy or build rigidity. The Maya X is what happens when you strip a mouse down to exactly what matters.</p>
+
+        <!-- Color selector -->
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Color: <span id="colorName">White</span></p>
+          <div class="pdp-colors">
+            <button class="color-swatch active" style="background:#e8e8e8;border:1px solid #555;" data-name="White" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#1a1a1a;" data-name="Black" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#f4a0c0;" data-name="Pink" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#7B2FFF;" data-name="Purple" onclick="selectColor(this)"></button>
+          </div>
+        </div>
+
+        <button class="btn-red btn-auth pdp-cart-btn" onclick="addToCart('Lamzu Maya X', 8200, './images/mayax1.webp')">
+          Checkout Product
+          <svg width="16" height="14" viewBox="0 0 26 24" fill="none" style="margin-left:8px;vertical-align:middle"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+        </button>
+
+        <div class="pdp-milestones">
+          <span>MADE IN PHILIPPINES 🇵🇭</span>
+          <span>SOLD WORLDWIDE 🌐</span>
+          <span>FOUNDED IN 2026 ⌨️🖱️</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Specs -->
+      <div class="pdp-specs">
+        <h3 class="pdp-specs-title">Specifications</h3>
+        <ul class="pdp-specs-list">
+          <li><span class="spec-key">Sensor</span><span class="spec-val">PixArt PAW3395</span></li>
+          <li><span class="spec-key">Resolution</span><span class="spec-val">100 – 26,000 DPI</span></li>
+          <li><span class="spec-key">Polling Rate</span><span class="spec-val">1000 Hz</span></li>
+          <li><span class="spec-key">Weight</span><span class="spec-val">55g (without cable)</span></li>
+          <li><span class="spec-key">Shape</span><span class="spec-val">Ergonomic right-hand</span></li>
+          <li><span class="spec-key">Grip Style</span><span class="spec-val">Claw / Fingertip</span></li>
+          <li><span class="spec-key">Switches</span><span class="spec-val">Kailh GM 8.0</span></li>
+          <li><span class="spec-key">Cable</span><span class="spec-val">Flexible paracord USB-C</span></li>
+          <li><span class="spec-key">Feet</span><span class="spec-val">100% PTFE</span></li>
+          <li><span class="spec-key">Buttons</span><span class="spec-val">5 programmable</span></li>
+          <li><span class="spec-key">RGB</span><span class="spec-val">None (weight optimized)</span></li>
+          <li><span class="spec-key">Compatibility</span><span class="spec-val">Windows / macOS</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- WHY THIS PRODUCT -->
+    <div class="pdp-why">
+      <div class="pdp-why-inner">
+        <div class="pdp-why-text">
+          <h2>Why the Lamzu Maya X?</h2>
+          <p>Weight is the most underrated variable in mouse performance. A heavier mouse requires more force to accelerate and decelerate — which means more micro-corrections, more fatigue, and less consistent aim over a long session.</p>
+          <p>The Maya X sits at 55g without sacrificing structural integrity. No honeycomb cuts. No hollow shell that flexes under a firm grip. Just a solid, rigid, lightweight ergo that tracks exactly where you move it.</p>
+          <p><strong>Built for claw and fingertip players who've been waiting for something that actually fits their hand.</strong></p>
+        </div>
+        <div class="pdp-why-img">
+          <img src="./images/mayax1.webp" alt="Lamzu Maya X detail" />
+        </div>
+      </div>
+    </div>
+
+    <!-- PROS SECTION -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title">Used by your favorite pros:</h2>
+      <div class="pdp-pros-grid">
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/aspas.webp" alt="MIBR aspas" />
+          </div>
+          <p class="pro-name">MIBR aspas</p>
+          <p class="pro-team">MIBR</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/jinggg.webp" alt="PRX Jinggg" />
+          </div>
+          <p class="pro-name">PRX Jinggg</p>
+          <p class="pro-team">Paper Rex</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/s1mple.webp" alt="BC.G s1mple" />
+          </div>
+          <p class="pro-name">BC.G s1mple</p>
+          <p class="pro-team">BC.Game</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/jawgemo.webp" alt="EG Jawgemo" />
+          </div>
+          <p class="pro-name">EG Jawgemo</p>
+          <p class="pro-team">Evil Geniuses</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title" style="margin-bottom:28px;">You might also like</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./images/superstrike1.jpg" alt="Superstrike 2" />
+          </div>
+          <h3 class="product-name">SUPERSTRIKE 2</h3>
+          <a href="product-mouse.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./images/op18k1.webp" alt="OP1 8K V2 Purple" />
+          </div>
+          <h3 class="product-name">OP1 8K V2 PURPLE</h3>
+          <a href="product-op1.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./images/atlantis1.webp" alt="Lamzu Atlantis Pro" />
+          </div>
+          <h3 class="product-name">LAMZU ATLANTIS PRO</h3>
+          <a href="product-atlantis.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>SHOP</h4><ul><li><a href="products.html#mice">Gaming Mouse</a></li><li><a href="products.html#keyboards">Hall Effect Keyboards</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="about.html">About Us</a></li></ul></div>
+        <div class="footer-col"><h4>POLICIES</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="payment.html">Payment Guide</a></li><li><a href="tos.html">Terms of Service</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 MVXU</p></div>
+  </footer>
+
+  <script>
+    function addToCart(name, price, img) {
+      localStorage.setItem("cart_name", name);
+      localStorage.setItem("cart_price", price);
+      localStorage.setItem("cart_img", img);
+      window.location.href = "cart.html";
+    }
+    function switchImg(thumb, src) {
+      document.getElementById('mainImgEl').src = src;
+      document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+    function selectColor(swatch) {
+      document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.getElementById('colorName').textContent = swatch.dataset.name;
+    }
+  </script>
+
+</body>
+</html>

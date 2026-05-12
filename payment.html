@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Guide – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo">
+        <img src="./logo.png" alt="MVXU" class="logo-img" />
+      </a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H20.4C20.8693 16.009 21.3268 15.8526 21.6925 15.5583C22.0581 15.264 22.3086 14.8504 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+          <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="payment-page">
+    <div class="payment-container">
+
+      <!-- LEFT: Steps -->
+      <div class="payment-left">
+        <h1 class="payment-title">Payment Guide</h1>
+
+        <div class="payment-intro">
+          <p class="payment-section-label">Payment Process</p>
+          <p class="payment-body-text">After placing your order, payment instructions will be provided on the checkout page.</p>
+        </div>
+
+        <div class="payment-steps">
+
+          <div class="payment-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Confirm Your Order</h3>
+              <p>Review your items, shipping details, and total amount before proceeding.</p>
+            </div>
+          </div>
+
+          <div class="payment-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Complete Your Payment</h3>
+              <p>Send the exact amount via GCash using the provided QR code or account details.</p>
+            </div>
+          </div>
+
+          <div class="payment-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Submit Proof of Payment</h3>
+              <p>Upload your payment screenshot and enter your transaction reference number on the confirmation page.</p>
+            </div>
+          </div>
+
+          <div class="payment-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Verification</h3>
+              <p>Payments are reviewed within 24 hours. Once verified, your order will be processed.</p>
+            </div>
+          </div>
+
+          <div class="payment-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h3>Order Confirmation</h3>
+              <p>You will receive a confirmation once your payment has been successfully verified.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="payment-important">
+          <span class="important-label">⚠ Important</span>
+          <p>Orders are only confirmed after payment verification. Unpaid or incomplete submissions will not be processed.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: QR + Form -->
+      <div class="payment-right">
+        <div class="payment-qr-card">
+          <div class="qr-placeholder">
+            <!-- QR code placeholder — replace src with your actual GCash QR image -->
+            <div class="qr-box">
+              <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="120" height="120" fill="#f5f5f5"/>
+                <!-- QR pattern simulation -->
+                <rect x="10" y="10" width="40" height="40" fill="none" stroke="#111" stroke-width="4"/>
+                <rect x="18" y="18" width="24" height="24" fill="#111"/>
+                <rect x="70" y="10" width="40" height="40" fill="none" stroke="#111" stroke-width="4"/>
+                <rect x="78" y="18" width="24" height="24" fill="#111"/>
+                <rect x="10" y="70" width="40" height="40" fill="none" stroke="#111" stroke-width="4"/>
+                <rect x="18" y="78" width="24" height="24" fill="#111"/>
+                <rect x="70" y="70" width="8" height="8" fill="#111"/>
+                <rect x="82" y="70" width="8" height="8" fill="#111"/>
+                <rect x="94" y="70" width="16" height="8" fill="#111"/>
+                <rect x="70" y="82" width="16" height="8" fill="#111"/>
+                <rect x="90" y="82" width="20" height="8" fill="#111"/>
+                <rect x="70" y="94" width="8" height="16" fill="#111"/>
+                <rect x="82" y="100" width="28" height="10" fill="#111"/>
+                <rect x="58" y="10" width="8" height="8" fill="#111"/>
+                <rect x="58" y="22" width="8" height="16" fill="#111"/>
+                <rect x="58" y="42" width="8" height="16" fill="#111"/>
+                <rect x="10" y="58" width="16" height="8" fill="#111"/>
+                <rect x="30" y="58" width="8" height="8" fill="#111"/>
+                <rect x="42" y="58" width="16" height="8" fill="#111"/>
+              </svg>
+              <p class="qr-label">InstaPay QR</p>
+            </div>
+            <p class="qr-note">Transfer fees may apply.</p>
+            <p class="qr-name">MVXU</p>
+            <p class="qr-detail">MI***L ST***N G.</p>
+            <p class="qr-detail">Mobile No.: +63 945 708 ····</p>
+            <p class="qr-detail">User ID: ··········YDJSEA</p>
+          </div>
+        </div>
+
+        <div class="payment-form-card">
+          <div class="pform-group">
+            <label class="pform-label">Amount</label>
+            <input type="text" class="pform-input" placeholder="₱0.00" />
+          </div>
+          <div class="pform-group">
+            <label class="pform-label">Your GCash Account No.</label>
+            <input type="text" class="pform-input" placeholder="+63 9XX XXX XXXX" />
+          </div>
+          <div class="pform-group">
+            <label class="pform-label">Reference No.</label>
+            <input type="text" class="pform-input" placeholder="Enter transaction ref" />
+          </div>
+          <button type="button" class="btn-red btn-auth btn-confirm">Confirm Payment</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="./logo.png" alt="MVXU" class="logo-img" />
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>SHOP</h4>
+          <ul>
+            <li><a href="products.html#mice">Gaming Mouse</a></li>
+            <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li><a href="contact.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ABOUT</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>POLICIES</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="payment.html">Payment Guide</a></li>
+            <li><a href="tos.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 MVXU</p>
+    </div>
+  </footer>
+
+</body>
+</html>

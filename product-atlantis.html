@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lamzu Atlantis Pro – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="bc-sep">&gt;</span>
+    <a href="products.html">Products</a>
+    <span class="bc-sep">&gt;</span>
+    <span>Keyboard</span>
+    <span class="bc-sep">&gt;</span>
+    <span>Lamzu Atlantis Pro</span>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <main class="pdp-page">
+    <div class="pdp-container">
+
+      <!-- LEFT: Images -->
+      <div class="pdp-images">
+        <div class="pdp-main-img">
+          <img src="./images/atlantis1.webp" alt="Lamzu Atlantis Pro main" id="mainImgEl" />
+        </div>
+        <div class="pdp-thumbs">
+          <div class="pdp-thumb active" onclick="switchImg(this, './images/atlantis2.webp')">
+            <img src="./images/atlantis2.webp" alt="View 1" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/atlantis3.webp')">
+            <img src="./images/atlantis3.webp" alt="View 2" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/atlantis1.webp')">
+            <img src="./images/atlantis1.webp" alt="View 3" />
+          </div>
+        </div>
+      </div>
+
+      <!-- MIDDLE: Info -->
+      <div class="pdp-info">
+        <div class="pl-badge pl-badge--kb" style="margin-bottom:12px;display:inline-block;">Hall Effect</div>
+        <h1 class="pdp-title">Lamzu Atlantis Pro</h1>
+        <p class="pdp-price">Php 13,750.00</p>
+        <p class="pdp-desc">A compact 65% Hall Effect keyboard built for players who want tournament-ready input without the full-size footprint. Gasket-mounted for a premium feel, with magnetic switches that track every keystroke at the sub-millimeter level — and never wear out.</p>
+
+        <!-- Layout selector -->
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Layout: <span id="layoutName">US (QWERTY)</span></p>
+          <div class="pdp-layouts">
+            <button class="layout-btn active" data-name="US (QWERTY)" onclick="selectLayout(this)">US</button>
+            <button class="layout-btn" data-name="ISO Nordic" onclick="selectLayout(this)">Nordic</button>
+            <button class="layout-btn" data-name="ISO UK" onclick="selectLayout(this)">UK</button>
+          </div>
+        </div>
+
+        <!-- Color selector -->
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Color: <span id="colorName">White</span></p>
+          <div class="pdp-colors">
+            <button class="color-swatch active" style="background:#e8e8e8;border:1px solid #555;" data-name="White" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#1a1a1a;" data-name="Black" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#7B2FFF;" data-name="Purple" onclick="selectColor(this)"></button>
+          </div>
+        </div>
+
+        <button class="btn-red btn-auth pdp-cart-btn" onclick="addToCart('Lamzu Atlantis Pro', 13750, 'https://image.biccamera.com/img/00000014884164_A01.jpg?sr.dw=320&sr.dh=320&sr.mat=1')">
+          Checkout Product
+          <svg width="16" height="14" viewBox="0 0 26 24" fill="none" style="margin-left:8px;vertical-align:middle"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+        </button>
+
+        <div class="pdp-milestones">
+          <span>MADE IN PHILIPPINES 🇵🇭</span>
+          <span>SOLD WORLDWIDE 🌐</span>
+          <span>FOUNDED IN 2026 ⌨️🖱️</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Specs -->
+      <div class="pdp-specs">
+        <h3 class="pdp-specs-title">Specifications</h3>
+        <ul class="pdp-specs-list">
+          <li><span class="spec-key">Switch Type</span><span class="spec-val">Hall Effect Magnetic</span></li>
+          <li><span class="spec-key">Actuation</span><span class="spec-val">0.1 – 4.0mm adjustable</span></li>
+          <li><span class="spec-key">Rapid Trigger</span><span class="spec-val">Yes</span></li>
+          <li><span class="spec-key">Polling Rate</span><span class="spec-val">1000 Hz (8000 Hz supported)</span></li>
+          <li><span class="spec-key">Latency</span><span class="spec-val">~1ms class</span></li>
+          <li><span class="spec-key">Layout</span><span class="spec-val">65% (68 keys)</span></li>
+          <li><span class="spec-key">Mount</span><span class="spec-val">Gasket mount</span></li>
+          <li><span class="spec-key">RGB</span><span class="spec-val">Per-key RGB</span></li>
+          <li><span class="spec-key">Connection</span><span class="spec-val">USB-C (detachable)</span></li>
+          <li><span class="spec-key">Battery</span><span class="spec-val">N/A (wired)</span></li>
+          <li><span class="spec-key">Software</span><span class="spec-val">Lamzu Hub</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- HALL EFFECT EXPLAINER -->
+    <div class="pdp-explainer">
+      <div class="pdp-explainer-inner">
+        <h2>What makes the Atlantis Pro different?</h2>
+        <div class="pdp-explainer-grid">
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">🧲</div>
+            <h3>Magnetic Hall Effect</h3>
+            <p>No physical contact between switch components means zero wear over time. Your actuation stays consistent after 10 million keypresses — same as day one.</p>
+          </div>
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">⚡</div>
+            <h3>Rapid Trigger</h3>
+            <p>Keys reset the instant you release, not at a fixed point. Faster re-press, faster movement cancel, faster peek. The competitive advantage is real.</p>
+          </div>
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">🎯</div>
+            <h3>Gasket Mount</h3>
+            <p>The PCB floats on silicone gaskets, giving the board a subtle bounce that reduces finger fatigue during long sessions without sacrificing stability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROS SECTION -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title">Used by your favorite pros:</h2>
+      <div class="pdp-pros-grid">
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/tenz.png" alt="SEN TenZ" />
+          </div>
+          <p class="pro-name">SEN TenZ</p>
+          <p class="pro-team">Sentinels</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/forsaken.webp" alt="PRX f0rsakeN" />
+          </div>
+          <p class="pro-name">PRX f0rsakeN</p>
+          <p class="pro-team">Paper Rex</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/jawgemo.webp" alt="EG jawgemo" />
+          </div>
+          <p class="pro-name">EG jawgemo</p>
+          <p class="pro-team">Evil Geniuses</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/910.webp" alt="Mongolz 910" />
+          </div>
+          <p class="pro-name">Mongolz 910</p>
+          <p class="pro-team">Mongolz</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY THIS PRODUCT -->
+    <div class="pdp-why">
+      <div class="pdp-why-inner">
+        <div class="pdp-why-text">
+          <h2>Why the Lamzu Atlantis Pro?</h2>
+          <p>The 65% layout hits the sweet spot for competitive play — no numpad, no F-row bloat, just the keys you actually use in game, with more room for your mouse arm.</p>
+          <p>We tested the Atlantis Pro across 600+ hours of tournament simulation before listing it. Rapid Trigger was stress-tested at 0.1mm sensitivity — the lowest setting — across movement spam, buy-round inputs, and peek-cancel sequences.</p>
+          <p><strong>It held up every single time. That's why it's here.</strong></p>
+        </div>
+        <div class="pdp-why-img">
+          <img src="./images/atlantis1.webp" alt="Lamzu Atlantis Pro detail" />
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title" style="margin-bottom:28px;">You might also like</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://gameone.ph/media/catalog/product/mpiowebpcache/d378a0f20f83637cdb1392af8dc032a2/r/a/razer_huntsman_v3_pro_tenkeyless_white_rz03-04981700-r3m1_.webp" alt="Huntsman V3 Pro" />
+          </div>
+          <h3 class="product-name">HUNTSMAN V3 PRO</h3>
+          <a href="./product-huntsman.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://rotoboxph.com/cdn/shop/files/PCR_BLACK_027d39fc-53ce-4eee-81dd-5006e721b52a.jpg?v=1747361454&width=1024" alt="Wooting 80HE" />
+          </div>
+          <h3 class="product-name">WOOTING 80HE</h3>
+          <a href="product-keyboard.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://cdn.gearz.gg/assets/device/3453.webp?2024-11-16T03:33:46.7" alt="OP1 8K V2 Purple" />
+          </div>
+          <h3 class="product-name">OP1 8K V2 PURPLE</h3>
+          <a href="product-op1.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>SHOP</h4><ul><li><a href="products.html#mice">Gaming Mouse</a></li><li><a href="products.html#keyboards">Hall Effect Keyboards</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="about.html">About Us</a></li></ul></div>
+        <div class="footer-col"><h4>POLICIES</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="payment.html">Payment Guide</a></li><li><a href="tos.html">Terms of Service</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 MVXU</p></div>
+  </footer>
+
+  <script>
+    function addToCart(name, price, img) {
+      localStorage.setItem("cart_name", name);
+      localStorage.setItem("cart_price", price);
+      localStorage.setItem("cart_img", img);
+      window.location.href = "cart.html";
+    }
+    function switchImg(thumb, src) {
+      document.getElementById('mainImgEl').src = src;
+      document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+    function selectColor(swatch) {
+      document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.getElementById('colorName').textContent = swatch.dataset.name;
+    }
+    function selectLayout(btn) {
+      document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('layoutName').textContent = btn.dataset.name;
+    }
+  </script>
+
+</body>
+</html>

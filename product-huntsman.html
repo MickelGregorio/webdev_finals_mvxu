@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huntsman V3 Pro – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="bc-sep">&gt;</span>
+    <a href="products.html">Products</a>
+    <span class="bc-sep">&gt;</span>
+    <span>Keyboard</span>
+    <span class="bc-sep">&gt;</span>
+    <span>Huntsman V3 Pro</span>
+  </div>
+
+  <main class="pdp-page">
+    <div class="pdp-container">
+
+      <div class="pdp-images">
+        <div class="pdp-main-img">
+          <img src="https://gameone.ph/media/catalog/product/mpiowebpcache/d378a0f20f83637cdb1392af8dc032a2/r/a/razer_huntsman_v3_pro_tenkeyless_white_rz03-04981700-r3m1_.webp" alt="Huntsman V3 Pro" id="mainImgEl" />
+        </div>
+        <div class="pdp-thumbs">
+          <div class="pdp-thumb active" onclick="switchImg(this, './images/huntsman1.webp')">
+            <img src="./images/huntsman1.webp" alt="View 1" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/huntsman2.webp')">
+            <img src="./images/huntsman2.webp" alt="View 2" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/huntsman3.webp')">
+            <img src="./images/huntsman3.webp" alt="View 3" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-info">
+        <div class="pl-badge pl-badge--kb" style="margin-bottom:12px;display:inline-block;">Hall Effect</div>
+        <h1 class="pdp-title">Huntsman V3 Pro</h1>
+        <p class="pdp-price">Php 12,500.00</p>
+        <p class="pdp-desc">Full-size tournament keyboard with analog Hall Effect switches and on-the-fly actuation adjustment. Every key reports its exact depth of press — enabling Rapid Trigger, analog input, and the fastest reset speeds achievable in any keyboard today.</p>
+
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Layout: <span id="layoutName">US (QWERTY)</span></p>
+          <div class="pdp-layouts">
+            <button class="layout-btn active" data-name="US (QWERTY)" onclick="selectLayout(this)">US</button>
+            <button class="layout-btn" data-name="ISO Nordic" onclick="selectLayout(this)">Nordic</button>
+            <button class="layout-btn" data-name="ISO UK" onclick="selectLayout(this)">UK</button>
+          </div>
+        </div>
+
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Color: <span id="colorName">White</span></p>
+          <div class="pdp-colors">
+            <button class="color-swatch active" style="background:#e8e8e8;border:1px solid #555;" data-name="White" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#1a1a1a;" data-name="Black" onclick="selectColor(this)"></button>
+          </div>
+        </div>
+
+        <button class="btn-red btn-auth pdp-cart-btn" onclick="addToCart('Huntsman V3 Pro', 12500, 'https://gameone.ph/media/catalog/product/mpiowebpcache/d378a0f20f83637cdb1392af8dc032a2/r/a/razer_huntsman_v3_pro_tenkeyless_white_rz03-04981700-r3m1_.webp')">
+          Checkout Product
+          <svg width="16" height="14" viewBox="0 0 26 24" fill="none" style="margin-left:8px;vertical-align:middle"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+        </button>
+
+        <div class="pdp-milestones">
+          <span>MADE IN PHILIPPINES 🇵🇭</span>
+          <span>SOLD WORLDWIDE 🌐</span>
+          <span>FOUNDED IN 2026 ⌨️🖱️</span>
+        </div>
+      </div>
+
+      <div class="pdp-specs">
+        <h3 class="pdp-specs-title">Specifications</h3>
+        <ul class="pdp-specs-list">
+          <li><span class="spec-key">Switch Type</span><span class="spec-val">Razer Analog Optical</span></li>
+          <li><span class="spec-key">Actuation</span><span class="spec-val">0.1 – 4.0mm adjustable</span></li>
+          <li><span class="spec-key">Rapid Trigger</span><span class="spec-val">Yes</span></li>
+          <li><span class="spec-key">Polling Rate</span><span class="spec-val">8000 Hz</span></li>
+          <li><span class="spec-key">Latency</span><span class="spec-val">~0.125ms</span></li>
+          <li><span class="spec-key">Layout</span><span class="spec-val">Full-size (104 keys)</span></li>
+          <li><span class="spec-key">RGB</span><span class="spec-val">Per-key Razer Chroma</span></li>
+          <li><span class="spec-key">Connection</span><span class="spec-val">USB-A (braided)</span></li>
+          <li><span class="spec-key">Wrist Rest</span><span class="spec-val">Included (magnetic)</span></li>
+          <li><span class="spec-key">Software</span><span class="spec-val">Razer Synapse 4</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Hall Effect explainer -->
+    <div class="pdp-explainer">
+      <div class="pdp-explainer-inner">
+        <h2>Built for players who push limits</h2>
+        <div class="pdp-explainer-grid">
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">⚡</div>
+            <h3>8000 Hz Polling</h3>
+            <p>Reports position 8x per millisecond. At this polling rate, your inputs are registered faster than your monitor can even draw a new frame.</p>
+          </div>
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">🎯</div>
+            <h3>Rapid Trigger</h3>
+            <p>Keys reset the instant you release — not at a fixed 2mm point. This means faster movement cancels, faster re-presses, and faster everything.</p>
+          </div>
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">🔦</div>
+            <h3>Optical Actuation</h3>
+            <p>Light-based actuation means zero mechanical debounce delay. The signal travels at the speed of light — no physical contact, no bounce, no lag.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title">Used by your favorite pros:</h2>
+      <div class="pdp-pros-grid">
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap"><img src="./images/tenz.png" alt="SEN TenZ" /></div>
+          <p class="pro-name">SEN TenZ</p>
+          <p class="pro-team">Sentinels</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap"><img src="./images/donk.webp" alt="Spirit Donk" /></div>
+          <p class="pro-name">Spirit Donk</p>
+          <p class="pro-team">Team Spirit</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap"><img src="./images/frozen.webp" alt="FaZe Frozen" /></div>
+          <p class="pro-name">FaZe Frozen</p>
+          <p class="pro-team">FaZe Clan</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap"><img src="./images/m0nesy.webp" alt="FLC m0nesy" /></div>
+          <p class="pro-name">FLC m0nesy</p>
+          <p class="pro-team">Team Falcons</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why -->
+    <div class="pdp-why">
+      <div class="pdp-why-inner">
+        <div class="pdp-why-text">
+          <h2>Why the Huntsman V3 Pro?</h2>
+          <p>This is Razer's most competitive keyboard to date — built specifically around analog optical switches that never wear out and never need debounce delay.</p>
+          <p>The full-size layout with a magnetic wrist rest makes it ideal for players who type a lot outside of game and don't want to compromise their off-hours ergonomics for a 65% form factor.</p>
+          <p><strong>If you play at 8000 Hz and want the wrist rest included — this is your board.</strong></p>
+        </div>
+        <div class="pdp-why-img">
+          <img src="./images/huntsman1.webp" alt="Huntsman V3 Pro detail" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Related -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title" style="margin-bottom:28px;">You might also like</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="https://rotoboxph.com/cdn/shop/files/PCR_BLACK_027d39fc-53ce-4eee-81dd-5006e721b52a.jpg?v=1747361454&width=1024" alt="Wooting 80HE" /></div>
+          <h3 class="product-name">WOOTING 80HE</h3>
+          <a href="product-keyboard.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="./images/atlantis1.webp" alt="Lamzu Atlantis Pro" /></div>
+          <h3 class="product-name">LAMZU ATLANTIS PRO</h3>
+          <a href="product-atlantis.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="./images/superstrike1.jpg" alt="Superstrike 2" /></div>
+          <h3 class="product-name">SUPERSTRIKE 2</h3>
+          <a href="product-mouse.html" class="btn-red">LEARN MORE &gt;</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>SHOP</h4><ul><li><a href="products.html#mice">Gaming Mouse</a></li><li><a href="products.html#keyboards">Hall Effect Keyboards</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="about.html">About Us</a></li></ul></div>
+        <div class="footer-col"><h4>POLICIES</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="payment.html">Payment Guide</a></li><li><a href="tos.html">Terms of Service</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 MVXU</p></div>
+  </footer>
+
+  <script>
+    function switchImg(thumb, src) {
+      document.getElementById('mainImgEl').src = src;
+      document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+    function selectColor(swatch) {
+      document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.getElementById('colorName').textContent = swatch.dataset.name;
+    }
+    function selectLayout(btn) {
+      document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('layoutName').textContent = btn.dataset.name;
+    }
+    function addToCart(name, price, img) {
+      localStorage.setItem('cart_name', name);
+      localStorage.setItem('cart_price', price);
+      localStorage.setItem('cart_img', img);
+      window.location.href = 'cart.html';
+    }
+  </script>
+
+</body>
+</html>

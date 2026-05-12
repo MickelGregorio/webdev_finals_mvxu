@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wooting 80HE – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="bc-sep">&gt;</span>
+    <a href="products.html">Products</a>
+    <span class="bc-sep">&gt;</span>
+    <span>Keyboard</span>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <main class="pdp-page">
+    <div class="pdp-container">
+
+      <!-- LEFT: Images -->
+      <div class="pdp-images">
+        <div class="pdp-main-img">
+          <img src="./images/wooting1.webp" alt="Wooting 80HE main" id="mainImgEl" />
+        </div>
+        <div class="pdp-thumbs">
+          <div class="pdp-thumb active" onclick="switchImg(this, './images/wooting1.webp')">
+            <img src="./images/wooting1.webp" alt="View 1" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/wooting2.webp')">
+            <img src="./images/wooting2.webp" alt="View 2" />
+          </div>
+          <div class="pdp-thumb" onclick="switchImg(this, './images/wooting3.webp')">
+            <img src="./images/wooting3.webp" alt="View 3" />
+          </div>
+        </div>
+      </div>
+
+      <!-- MIDDLE: Info -->
+      <div class="pdp-info">
+        <div class="pl-badge pl-badge--kb" style="margin-bottom:12px;display:inline-block">Hall Effect</div>
+        <h1 class="pdp-title">Wooting 80HE</h1>
+        <p class="pdp-price">Php 15,490.00</p>
+        <p class="pdp-desc">High-performance gaming keyboard built around Hall Effect magnetic switches, giving you analog input instead of a simple on/off keypress. That means each key can detect how deep you press it, allowing for insanely fast and precise control.</p>
+
+        <!-- Layout selector -->
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Layout: <span id="layoutName">US (QWERTY)</span></p>
+          <div class="pdp-layouts">
+            <button class="layout-btn active" data-name="US (QWERTY)" onclick="selectLayout(this)">US</button>
+            <button class="layout-btn" data-name="ISO Nordic" onclick="selectLayout(this)">Nordic</button>
+            <button class="layout-btn" data-name="ISO UK" onclick="selectLayout(this)">UK</button>
+            <button class="layout-btn" data-name="JIS Japanese" onclick="selectLayout(this)">JIS</button>
+          </div>
+        </div>
+
+        <!-- Color selector -->
+        <div class="pdp-option-group">
+          <p class="pdp-option-label">Color: <span id="colorName">Black</span></p>
+          <div class="pdp-colors">
+            <button class="color-swatch active" style="background:#1a1a1a" data-name="Black" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#e8e8e8;border:1px solid #555" data-name="White" onclick="selectColor(this)"></button>
+            <button class="color-swatch" style="background:#7B2FFF" data-name="Purple" onclick="selectColor(this)"></button>
+          </div>
+        </div>
+
+        <button class="btn-red btn-auth pdp-cart-btn" onclick="addToCart('Wooting 80HE', 15490, './images/wooting1.webp')">
+          Checkout Product
+          <svg width="16" height="14" viewBox="0 0 26 24" fill="none" style="margin-left:8px;vertical-align:middle"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+        </button>
+
+        <div class="pdp-milestones">
+          <span>MADE IN PHILIPPINES 🇵🇭</span>
+          <span>SOLD WORLDWIDE 🌐</span>
+          <span>FOUNDED IN 2026 ⌨️🖱️</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Specs -->
+      <div class="pdp-specs">
+        <h3 class="pdp-specs-title">Specifications</h3>
+        <ul class="pdp-specs-list">
+          <li><span class="spec-key">Switches</span><span class="spec-val">Lekker Magnetic (Hall Effect)</span></li>
+          <li><span class="spec-key">Actuation</span><span class="spec-val">0.1 – 4.0 mm adjustable</span></li>
+          <li><span class="spec-key">Rapid Trigger</span><span class="spec-val">Yes</span></li>
+          <li><span class="spec-key">Polling Rate</span><span class="spec-val">1000 Hz (up to 8000 Hz)</span></li>
+          <li><span class="spec-key">Input</span><span class="spec-val">Analog per-key</span></li>
+          <li><span class="spec-key">Latency</span><span class="spec-val">~1ms class</span></li>
+          <li><span class="spec-key">Layout</span><span class="spec-val">75% (80 keys)</span></li>
+          <li><span class="spec-key">Connection</span><span class="spec-val">USB-C (detachable)</span></li>
+          <li><span class="spec-key">Software</span><span class="spec-val">Wootility</span></li>
+          <li><span class="spec-key">RGB</span><span class="spec-val">Per-key RGB</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- WHAT IS HALL EFFECT -->
+    <div class="pdp-explainer">
+      <div class="pdp-explainer-inner">
+        <h2>What is Hall Effect?</h2>
+        <div class="pdp-explainer-grid">
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">📡</div>
+            <h3>Magnetic Sensing</h3>
+            <p>Hall Effect switches use magnets instead of physical contact points. No wear, no chatter — just a clean signal every time.</p>
+          </div>
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">⚡</div>
+            <h3>Rapid Trigger</h3>
+            <p>Keys reset the moment you release — not at a fixed point. In FPS games this means faster re-presses and faster movement cancels.</p>
+          </div>
+          <div class="pdp-explainer-card">
+            <div class="expl-icon">🎛️</div>
+            <h3>Analog Input</h3>
+            <p>Each key can sense how far it's pressed, enabling variable input for games that support analog movement or throttle controls.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROS SECTION -->
+    <div class="pdp-pros-section">
+      <h2 class="pdp-pros-title">Used by your favorite pros:</h2>
+      <div class="pdp-pros-grid">
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/tenz.png" alt="SEN TenZ" />
+          </div>
+          <p class="pro-name">SEN TenZ</p>
+          <p class="pro-team">Sentinels</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/something.webp" alt="PRX Smth" />
+          </div>
+          <p class="pro-name">PRX Smth</p>
+          <p class="pro-team">Paper Rex</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/frozen.webp" alt="FaZe frozen" />
+          </div>
+          <p class="pro-name">FaZe frozen</p>
+          <p class="pro-team">FaZe Clan</p>
+        </div>
+        <div class="pdp-pro-card">
+          <div class="pro-img-wrap">
+            <img src="./images/niko.webp" alt="FLC Niko" />
+          </div>
+          <p class="pro-name">FLC Niko</p>
+          <p class="pro-team">Team Falcons</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY THIS PRODUCT -->
+    <div class="pdp-why">
+      <div class="pdp-why-inner">
+        <div class="pdp-why-text">
+          <h2>Why the Wooting 80HE?</h2>
+          <p>Most keyboards are built for typists. This one is built for players who know the difference between <strong>actuation point</strong> and <strong>reset point</strong> — and why it matters at 1v1 range.</p>
+          <p>The Wooting 80HE passed our internal benchmark across 500+ hours of tournament simulation. Rapid Trigger was stress-tested across movement, buyround spam, and peek-cancel sequences.</p>
+          <p>If you're serious about your input device, this is the one.</p>
+        </div>
+        <div class="pdp-why-img">
+          <img src="./images/wooting1.webp" alt="Wooting 80HE detail" />
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>SHOP</h4><ul><li><a href="products.html#mice">Gaming Mouse</a></li><li><a href="products.html#keyboards">Hall Effect Keyboards</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="about.html">About Us</a></li></ul></div>
+        <div class="footer-col"><h4>POLICIES</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="payment.html">Payment Guide</a></li><li><a href="tos.html">Terms of Service</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 MVXU</p></div>
+  </footer>
+
+  <script>
+    function addToCart(name, price, img) {
+      localStorage.setItem('cart_name', name);
+      localStorage.setItem('cart_price', price);
+      localStorage.setItem('cart_img', img);
+      window.location.href = 'cart.html';
+    }
+    function switchImg(thumb, src) {
+      document.getElementById('mainImgEl').src = src;
+      document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+    function selectColor(swatch) {
+      document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.getElementById('colorName').textContent = swatch.dataset.name;
+    }
+    function selectLayout(btn) {
+      document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('layoutName').textContent = btn.dataset.name;
+    }
+  </script>
+
+</body>
+</html>
