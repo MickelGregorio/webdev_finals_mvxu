@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none"><path d="M1 1H5L7.68 14.39C7.77 14.85 8.02 15.26 8.39 15.56C8.75 15.85 9.21 16.01 9.68 16H20.4C20.87 16.01 21.33 15.85 21.69 15.56C22.06 15.26 22.31 14.85 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.5" fill="white"/><circle cx="20" cy="20.5" r="1.5" fill="white"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="reviews-hero">
+    <div class="reviews-hero-inner">
+      <div class="reviews-hero-tag">
+        <span class="reviews-tag-line"></span>
+        <span class="reviews-tag-text">REVIEWS</span>
+      </div>
+      <h1 class="reviews-hero-title">What They're Saying</h1>
+      <p class="reviews-hero-sub">Verified buyers. Real setups. No filter.</p>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="reviews-stats">
+      <div class="reviews-stat">
+        <span class="stat-num">4.9</span>
+        <span class="stat-stars">★★★★★</span>
+        <span class="stat-label">Average Rating</span>
+      </div>
+      <div class="reviews-stat-divider"></div>
+      <div class="reviews-stat">
+        <span class="stat-num">200+</span>
+        <span class="stat-label">Verified Reviews</span>
+      </div>
+      <div class="reviews-stat-divider"></div>
+      <div class="reviews-stat">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">Would Recommend</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <div class="reviews-filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="mouse">Gaming Mouse</button>
+    <button class="filter-btn" data-filter="keyboard">Keyboards</button>
+    <button class="filter-btn" data-filter="pro">Pro Players</button>
+  </div>
+
+  <!-- REVIEWS GRID -->
+  <main class="reviews-page">
+
+    <!-- Pro player feature card (wide) -->
+    <div class="reviews-masonry">
+
+      <div class="review-card review-card--pro review-card--wide" data-cat="pro">
+        <div class="review-pro-tag">✦ Pro Player</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote"><strong>First wireless mouse I've trusted at LAN.</strong> The MVXU LINK is genuinely indistinguishable from wired, and I've been playing on it through every stage of VCT this split.</p>
+        <div class="review-author-row">
+          <div class="review-avatar review-avatar--pro">JK</div>
+          <div>
+            <p class="review-author-name">JUNI "KRAKENX"</p>
+            <p class="review-author-meta">VCT Participant · Verified</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="mouse">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">The honeycomb feels premium. Best mouse I've owned.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">MR</div>
+          <div>
+            <p class="review-author-name">Mark R.</p>
+            <p class="review-author-meta">Verified</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="mouse">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Flawless sensor, perfect shape.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">SL</div>
+          <div>
+            <p class="review-author-name">Sofia L.</p>
+            <p class="review-author-meta">Verified</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="keyboard">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Rapid Trigger changed how I play completely. The difference in movement cancel speed is actually measurable.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">RD</div>
+          <div>
+            <p class="review-author-name">Rico D.</p>
+            <p class="review-author-meta">Verified · Hall Effect KB</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card review-card--wide" data-cat="pro">
+        <div class="review-pro-tag">✦ Pro Player</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote"><strong>Switched to the Wooting 80HE three weeks before a LAN.</strong> Best decision I made that split. The actuation adjustment alone is worth it — I run 0.2mm rapid trigger and it's a completely different game.</p>
+        <div class="review-author-row">
+          <div class="review-avatar review-avatar--pro">AM</div>
+          <div>
+            <p class="review-author-name">ALEX "M4GIC"</p>
+            <p class="review-author-meta">Regional Champion · Verified</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="mouse">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-quote">Ultra light, zero jitter. Took a day to get used to the shape but now I can't go back.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">KP</div>
+          <div>
+            <p class="review-author-name">Karl P.</p>
+            <p class="review-author-meta">Verified · Lamzu Maya X</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="keyboard">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Every key feels the same. No wobble, no inconsistency. It's the most consistent keyboard I've typed on.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">JT</div>
+          <div>
+            <p class="review-author-name">Jamie T.</p>
+            <p class="review-author-meta">Verified · Huntsman V3 Pro</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="mouse">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Ordered the OP1 8K V2. Arrived fast, packaged well. The polling rate upgrade over my old mouse is night and day in micro-adjustments.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">NV</div>
+          <div>
+            <p class="review-author-name">Nina V.</p>
+            <p class="review-author-meta">Verified · OP1 8K V2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card review-card--wide" data-cat="pro">
+        <div class="review-pro-tag">✦ Pro Player</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote"><strong>I've been using MVXU gear since they launched.</strong> The build quality is legitimate — not just spec-sheet marketing. My mouse survived two full tournament runs without a single skip or dropout.</p>
+        <div class="review-author-row">
+          <div class="review-avatar review-avatar--pro">ZK</div>
+          <div>
+            <p class="review-author-name">ZARA "KESTREL"</p>
+            <p class="review-author-meta">IGL · VCT Open Qualifier · Verified</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-cat="keyboard">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">Hall effect switches are genuinely the future. Zero wear, zero wobble. I've had mine for 4 months and it still feels brand new.</p>
+        <div class="review-author-row">
+          <div class="review-avatar">BM</div>
+          <div>
+            <p class="review-author-name">Ben M.</p>
+            <p class="review-author-meta">Verified · Lamzu Atlantis</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Write a review CTA -->
+    <div class="reviews-cta">
+      <h2>Got something to say?</h2>
+      <p>Share your experience with the MVXU community.</p>
+      <a href="login.html" class="btn-red btn-auth" style="width:auto;cursor:pointer;border:none;">WRITE A REVIEW</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="./logo.png" alt="MVXU" class="logo-img" /></div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>SHOP</h4><ul><li><a href="products.html#mice">Gaming Mouse</a></li><li><a href="products.html#keyboards">Hall Effect Keyboards</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>ABOUT</h4><ul><li><a href="about.html">About Us</a></li></ul></div>
+        <div class="footer-col"><h4>POLICIES</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="payment.html">Payment Guide</a></li><li><a href="tos.html">Terms of Service</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 MVXU</p></div>
+  </footer>
+
+  <script>
+    const filterBtns = document.querySelectorAll('.reviews-filter-bar .filter-btn');
+    const reviewCards = document.querySelectorAll('.review-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        reviewCards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Products – MVXU Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-shell">
+
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <div><div class="admin-logo-text"><img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" /></div></div>
+      <span class="admin-logo-tag">Admin</span>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Store</p>
+        <ul>
+          <li><a href="admin-dashboard.html"><span class="nav-icon">▪</span> Dashboard</a></li>
+          <li><a href="admin-featured.html" class="active"><span class="nav-icon">▪</span> Featured Products</a></li>
+          <li><a href="admin-categories.html"><span class="nav-icon">▪</span> Categories</a></li>
+          <li><a href="admin-products.html"><span class="nav-icon">▪</span> Products</a></li>
+          <li><a href="admin-pages.html"><span class="nav-icon">▪</span> Pages</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Orders</p>
+        <ul>
+          <li><a href="admin-orders.html"><span class="nav-icon">▪</span> Orders</a></li>
+          <li><a href="admin-users.html"><span class="nav-icon">▪</span> Users</a></li>
+          <li><a href="admin-reviews.html"><span class="nav-icon">▪</span> Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="admin-sidebar-footer">Global Store Version 1.0.0</div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <span class="admin-topbar-title">Featured Products</span>
+      <div class="admin-topbar-right">
+        <div class="admin-topbar-user"><div class="admin-avatar">AD</div><span>Admin</span></div>
+        <a href="admin-login.html" class="admin-topbar-signout">Sign out</a>
+      </div>
+    </div>
+
+    <div class="admin-content">
+      <div class="admin-page-header">
+        <h1 class="admin-page-title">Featured Products</h1>
+        <button class="admin-btn-primary" onclick="showAddModal()">Add Product</button>
+      </div>
+
+      <!-- Info note -->
+      <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px;">These products appear in the Featured Products section on the homepage and the products page.</p>
+
+      <div class="admin-panel">
+
+        <div class="admin-product-row">
+          <div class="admin-product-img">
+            <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=100&q=80" alt="Wooting 80HE" />
+          </div>
+          <div class="admin-product-info">
+            <p class="admin-product-name">Wooting 80HE</p>
+            <p class="admin-product-meta">Wooting Keyboards · ₱15,490 · <span class="stock-in">In stock</span></p>
+          </div>
+          <div class="admin-product-actions">
+            <button class="admin-icon-btn" title="Move up" onclick="alert('Move up')">↑</button>
+            <button class="admin-icon-btn" title="Move down" onclick="alert('Move down')">↓</button>
+            <button class="admin-row-btn" onclick="alert('Edit Wooting 80HE')">Edit</button>
+            <button class="admin-icon-btn danger" title="Remove from featured" onclick="removeRow(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" stroke-width="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-panel-divider"></div>
+
+        <div class="admin-product-row">
+          <div class="admin-product-img">
+            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=100&q=80" alt="Superstrike V2" />
+          </div>
+          <div class="admin-product-info">
+            <p class="admin-product-name">Superstrike V2</p>
+            <p class="admin-product-meta">Custom Gaming Gear · ₱11,945 · <span class="stock-in">In stock</span></p>
+          </div>
+          <div class="admin-product-actions">
+            <button class="admin-icon-btn" title="Move up">↑</button>
+            <button class="admin-icon-btn" title="Move down">↓</button>
+            <button class="admin-row-btn" onclick="alert('Edit Superstrike V2')">Edit</button>
+            <button class="admin-icon-btn danger" title="Remove" onclick="removeRow(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" stroke-width="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-panel-divider"></div>
+
+        <div class="admin-product-row">
+          <div class="admin-product-img">
+            <img src="https://images.unsplash.com/photo-1563297007-0686b7003af7?w=100&q=80" alt="OP1 8K V2 Purple" />
+          </div>
+          <div class="admin-product-info">
+            <p class="admin-product-name">OP1 8K V2 Purple</p>
+            <p class="admin-product-meta">Endgame Gear · ₱6,995 · <span class="stock-in">In stock</span></p>
+          </div>
+          <div class="admin-product-actions">
+            <button class="admin-icon-btn" title="Move up">↑</button>
+            <button class="admin-icon-btn" title="Move down">↓</button>
+            <button class="admin-row-btn" onclick="alert('Edit OP1 8K V2 Purple')">Edit</button>
+            <button class="admin-icon-btn danger" title="Remove" onclick="removeRow(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" stroke-width="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-panel-divider"></div>
+
+        <div class="admin-product-row">
+          <div class="admin-product-img">
+            <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=100&q=80" alt="Huntsman V3 Pro" />
+          </div>
+          <div class="admin-product-info">
+            <p class="admin-product-name">Huntsman V3 Pro</p>
+            <p class="admin-product-meta">Razer · ₱12,500 · <span class="stock-in">In stock</span></p>
+          </div>
+          <div class="admin-product-actions">
+            <button class="admin-icon-btn" title="Move up">↑</button>
+            <button class="admin-icon-btn" title="Move down">↓</button>
+            <button class="admin-row-btn" onclick="alert('Edit Huntsman V3 Pro')">Edit</button>
+            <button class="admin-icon-btn danger" title="Remove" onclick="removeRow(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" stroke-width="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-panel-divider"></div>
+
+        <div class="admin-product-row">
+          <div class="admin-product-img">
+            <img src="https://images.unsplash.com/photo-1601524909162-ae8725290836?w=100&q=80" alt="Lamzu Maya X" />
+          </div>
+          <div class="admin-product-info">
+            <p class="admin-product-name">Lamzu Maya X</p>
+            <p class="admin-product-meta">Lamzu · ₱8,200 · <span class="stock-in">In stock</span></p>
+          </div>
+          <div class="admin-product-actions">
+            <button class="admin-icon-btn" title="Move up">↑</button>
+            <button class="admin-icon-btn" title="Move down">↓</button>
+            <button class="admin-row-btn" onclick="alert('Edit Lamzu Maya X')">Edit</button>
+            <button class="admin-icon-btn danger" title="Remove" onclick="removeRow(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" stroke-width="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function removeRow(btn) {
+  const row = btn.closest('.admin-product-row');
+  const divider = row.nextElementSibling || row.previousElementSibling;
+  if (confirm('Remove this product from featured?')) {
+    row.remove();
+    if (divider && divider.classList.contains('admin-panel-divider')) divider.remove();
+  }
+}
+function showAddModal() { alert('Add Product modal — connect to your product database here.'); }
+</script>
+</body>
+</html>

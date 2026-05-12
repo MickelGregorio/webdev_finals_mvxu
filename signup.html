@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account – MVXU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-top">
+      <span class="header-auth">
+        <a href="login.html">Sign In</a>
+        <span class="sep">or</span>
+        <a href="signup.html">Create an Account</a>
+      </span>
+    </div>
+    <div class="header-main">
+      <a href="index.html" class="logo">
+        <img src="./logo.png" alt="MVXU" class="logo-img" />
+      </a>
+      <nav class="nav-main">
+        <ul>
+          <li class="has-dropdown">
+            <a href="products.html">Products <span class="arrow">&#8964;</span></a>
+            <ul class="dropdown">
+              <li><a href="products.html#mice">Gaming Mouse</a></li>
+              <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H20.4C20.8693 16.009 21.3268 15.8526 21.6925 15.5583C22.0581 15.264 22.3086 14.8504 22.4 14.39L24 6H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="10" cy="20.5" r="1.5" fill="white"/>
+          <circle cx="20" cy="20.5" r="1.5" fill="white"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== SIGNUP CONTENT ========== -->
+  <main class="auth-page">
+    <div class="auth-container signup-container">
+
+      <div class="auth-header">
+        <h1 class="auth-title">Create New Account</h1>
+        <p class="auth-subtitle">Customer Registration</p>
+        <p class="auth-hint">If you have an account, <a href="login.html">sign in with your email address.</a></p>
+      </div>
+
+      <div class="signup-grid">
+
+        <!-- LEFT: Personal Info -->
+        <div class="signup-col">
+          <div class="form-section-label">Personal Information</div>
+          <div class="form-section-line"></div>
+
+          <div class="form-group">
+            <label class="form-label" for="first-name">First Name <span class="required">*</span></label>
+            <input type="text" id="first-name" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="last-name">Last Name <span class="required">*</span></label>
+            <input type="text" id="last-name" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" class="form-input form-input--half" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="password">Password <span class="required">*</span></label>
+            <input type="password" id="password" class="form-input form-input--half" />
+            <p class="pw-strength">Password Strength: <span id="strength-text">No Password</span></p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="confirm-password">Confirm Password <span class="required">*</span></label>
+            <input type="password" id="confirm-password" class="form-input form-input--half" />
+          </div>
+        </div>
+
+        <!-- RIGHT: Address Info -->
+        <div class="signup-col">
+          <div class="form-section-label">Address Information</div>
+          <div class="form-section-line"></div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="street1">Street Address <span class="required">*</span></label>
+            <input type="text" id="street1" class="form-input" />
+            <input type="text" id="street2" class="form-input form-input--stacked" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="country">Country <span class="required">*</span></label>
+            <div class="select-wrap">
+              <select id="country" class="form-input form-select">
+                <option value="">-- Select Country --</option>
+                <option value="PH">Philippines</option>
+                <option value="US">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="AU">Australia</option>
+                <option value="CA">Canada</option>
+                <option value="SG">Singapore</option>
+                <option value="JP">Japan</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="state">State / Province</label>
+            <input type="text" id="state" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="city">City <span class="required">*</span></label>
+            <input type="text" id="city" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="zip">Zip / Postal Code <span class="required">*</span></label>
+            <input type="text" id="zip" class="form-input" />
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-red btn-auth">CREATE AN ACCOUNT</button>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Sign in here.</a></p>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="./logo.png" alt="MVXU" class="logo-img" />
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>SHOP</h4>
+          <ul>
+            <li><a href="products.html#mice">Gaming Mouse</a></li>
+            <li><a href="products.html#keyboards">Hall Effect Keyboards</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li><a href="contact.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ABOUT</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>POLICIES</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="payment.html">Payment Guide</a></li>
+            <li><a href="tos.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 MVXU</p>
+    </div>
+  </footer>
+
+  <script>
+    // Password strength indicator
+    const pwInput = document.getElementById('password');
+    const strengthText = document.getElementById('strength-text');
+    pwInput.addEventListener('input', function() {
+      const val = this.value;
+      if (!val) { strengthText.textContent = 'No Password'; strengthText.style.color = '#888'; return; }
+      if (val.length < 6) { strengthText.textContent = 'Weak'; strengthText.style.color = '#b8332c'; return; }
+      if (val.length < 10 || !/[A-Z]/.test(val) || !/[0-9]/.test(val)) {
+        strengthText.textContent = 'Medium'; strengthText.style.color = '#e0a020'; return;
+      }
+      strengthText.textContent = 'Strong'; strengthText.style.color = '#2ecc71';
+    });
+  </script>
+
+</body>
+</html>

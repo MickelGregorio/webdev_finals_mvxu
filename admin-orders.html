@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Orders – MVXU Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <div><div class="admin-logo-text"><img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" /></div></div>
+      <span class="admin-logo-tag">Admin</span>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Store</p>
+        <ul>
+          <li><a href="admin-dashboard.html"><span class="nav-icon">▪</span> Dashboard</a></li>
+          <li><a href="admin-featured.html"><span class="nav-icon">▪</span> Featured Products</a></li>
+          <li><a href="admin-categories.html"><span class="nav-icon">▪</span> Categories</a></li>
+          <li><a href="admin-products.html"><span class="nav-icon">▪</span> Products</a></li>
+          <li><a href="admin-pages.html"><span class="nav-icon">▪</span> Pages</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Orders</p>
+        <ul>
+          <li><a href="admin-orders.html" class="active"><span class="nav-icon">▪</span> Orders</a></li>
+          <li><a href="admin-users.html"><span class="nav-icon">▪</span> Users</a></li>
+          <li><a href="admin-reviews.html"><span class="nav-icon">▪</span> Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="admin-sidebar-footer">Global Store Version 1.0.0</div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <span class="admin-topbar-title">All Orders</span>
+      <div class="admin-topbar-right">
+        <div class="admin-topbar-user"><div class="admin-avatar">AD</div><span>Admin</span></div>
+        <a href="admin-login.html" class="admin-topbar-signout">Sign out</a>
+      </div>
+    </div>
+    <div class="admin-content">
+      <div class="admin-page-header">
+        <h1 class="admin-page-title">All Orders</h1>
+        <button class="admin-btn-primary" onclick="alert('Exporting...')">Export CSV</button>
+      </div>
+
+      <div class="admin-orders-toolbar">
+        <input type="text" class="admin-search-input" placeholder="Search order or customer..." id="oSearch" oninput="filterOrders()" />
+        <select class="admin-filter-select" id="oStatus" onchange="filterOrders()">
+          <option value="all">All Statuses</option>
+          <option value="shipped">Shipped</option>
+          <option value="pending">Pending</option>
+          <option value="processing">Processing</option>
+        </select>
+        <select class="admin-filter-select" id="oCountry" onchange="filterOrders()">
+          <option value="all">All Countries</option>
+          <option value="PH">Philippines</option>
+          <option value="SG">Singapore</option>
+          <option value="KR">Korea</option>
+        </select>
+      </div>
+
+      <div class="admin-panel">
+        <table class="admin-table" id="ordersTable">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Customer</th>
+              <th>Country</th>
+              <th>Product</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="shipped" data-country="PH" data-search="#0005 j. lim juan lim wooting">
+              <td><span class="td-order-no">#0005</span></td>
+              <td>J. Lim</td>
+              <td class="td-muted">PH</td>
+              <td>WOOTING 80HE</td>
+              <td>₱15,490</td>
+              <td class="td-muted">Apr 20</td>
+              <td><span class="status-badge status-shipped">Shipped</span></td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="admin-row-btn" onclick="alert('View #0005')">View</button>
+                  <select class="admin-filter-select" style="font-size:12px;padding:5px 8px;" onchange="updateStatus(this)">
+                    <option>Shipped</option><option>Processing</option><option>Pending</option><option>Cancelled</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr data-status="shipped" data-country="PH" data-search="#0004 m. santos maria santos superstrike">
+              <td><span class="td-order-no">#0004</span></td>
+              <td>M. Santos</td>
+              <td class="td-muted">PH</td>
+              <td>SUPERSTRIKE V2</td>
+              <td>₱11,945</td>
+              <td class="td-muted">Apr 20</td>
+              <td><span class="status-badge status-shipped">Shipped</span></td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="admin-row-btn" onclick="alert('View #0004')">View</button>
+                  <select class="admin-filter-select" style="font-size:12px;padding:5px 8px;" onchange="updateStatus(this)">
+                    <option>Shipped</option><option>Processing</option><option>Pending</option><option>Cancelled</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr data-status="shipped" data-country="SG" data-search="#0003 k. tan kevin tan op1 8k">
+              <td><span class="td-order-no">#0003</span></td>
+              <td>K. Tan</td>
+              <td class="td-muted">SG</td>
+              <td>OP1 8K V2 PURPLE</td>
+              <td>₱6,995</td>
+              <td class="td-muted">Apr 19</td>
+              <td><span class="status-badge status-shipped">Shipped</span></td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="admin-row-btn" onclick="alert('View #0003')">View</button>
+                  <select class="admin-filter-select" style="font-size:12px;padding:5px 8px;" onchange="updateStatus(this)">
+                    <option>Shipped</option><option>Processing</option><option>Pending</option><option>Cancelled</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr data-status="shipped" data-country="KR" data-search="#0002 d. park daniel park huntsman">
+              <td><span class="td-order-no">#0002</span></td>
+              <td>D. Park</td>
+              <td class="td-muted">KR</td>
+              <td>HUNTSMAN V3 PRO</td>
+              <td>₱13,490</td>
+              <td class="td-muted">Apr 19</td>
+              <td><span class="status-badge status-shipped">Shipped</span></td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="admin-row-btn" onclick="alert('View #0002')">View</button>
+                  <select class="admin-filter-select" style="font-size:12px;padding:5px 8px;" onchange="updateStatus(this)">
+                    <option>Shipped</option><option>Processing</option><option>Pending</option><option>Cancelled</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr data-status="pending" data-country="PH" data-search="#0001 a. cruz ana cruz lamzu atlantis">
+              <td><span class="td-order-no">#0001</span></td>
+              <td>A. Cruz</td>
+              <td class="td-muted">PH</td>
+              <td>LAMZU ATLANTIS</td>
+              <td>₱5,795</td>
+              <td class="td-muted">Apr 18</td>
+              <td><span class="status-badge status-processing">Pending</span></td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="admin-row-btn" onclick="alert('View #0001')">View</button>
+                  <select class="admin-filter-select" style="font-size:12px;padding:5px 8px;" onchange="updateStatus(this)">
+                    <option>Pending</option><option>Shipped</option><option>Processing</option><option>Cancelled</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function filterOrders() {
+  const q = document.getElementById('oSearch').value.toLowerCase();
+  const s = document.getElementById('oStatus').value;
+  const c = document.getElementById('oCountry').value;
+  document.querySelectorAll('#ordersTable tbody tr').forEach(row => {
+    const ms = !q || row.dataset.search.includes(q);
+    const mst = s === 'all' || row.dataset.status === s;
+    const mc = c === 'all' || row.dataset.country === c;
+    row.style.display = (ms && mst && mc) ? '' : 'none';
+  });
+}
+function updateStatus(sel) { alert('Status updated to: ' + sel.value); }
+</script>
+</body>
+</html>

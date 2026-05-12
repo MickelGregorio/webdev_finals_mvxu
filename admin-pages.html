@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pages – MVXU Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+  <style>
+    .pages-layout{display:flex;gap:20px;align-items:flex-start;}
+    .pages-sidebar{width:220px;flex-shrink:0;background:var(--col-card);border:1px solid var(--col-border);border-radius:8px;overflow:hidden;}
+    .pages-sidebar-title{font-family:var(--font-d);font-weight:700;font-size:12px;letter-spacing:2px;color:var(--col-muted);text-transform:uppercase;padding:16px 18px 10px;}
+    .page-nav-item{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:13px;font-weight:500;color:var(--col-muted);cursor:pointer;transition:background 0.15s,color 0.15s;border-left:3px solid transparent;}
+    .page-nav-item:hover{background:rgba(255,255,255,0.04);color:var(--col-white);}
+    .page-nav-item.active{background:rgba(123,47,255,0.1);color:var(--col-purple-lt);border-left-color:var(--col-purple);}
+    .pages-editor{flex:1;display:flex;flex-direction:column;gap:0;}
+    .pe-card{background:var(--col-card);border:1px solid var(--col-border);border-radius:8px;overflow:hidden;}
+    .pe-tabs{display:flex;border-bottom:1px solid var(--col-border);}
+    .pe-tab{padding:12px 20px;font-family:var(--font-b);font-size:13px;font-weight:600;color:var(--col-muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;}
+    .pe-tab:hover{color:var(--col-white);}
+    .pe-tab.active{color:var(--col-white);border-bottom-color:var(--col-purple);}
+    .pe-body{padding:24px;display:flex;flex-direction:column;gap:20px;}
+    .pe-field{display:flex;flex-direction:column;gap:8px;}
+    .pe-label{font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);}
+    .pe-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--col-white);font-family:var(--font-b);font-size:14px;padding:11px 14px;border-radius:4px;outline:none;transition:border-color 0.2s;}
+    .pe-input:focus{border-color:var(--col-purple);}
+    .pe-input::placeholder{color:rgba(255,255,255,0.15);}
+    .pe-textarea{resize:vertical;min-height:120px;line-height:1.6;}
+    .pe-drop{background:rgba(255,255,255,0.02);border:2px dashed rgba(255,255,255,0.08);border-radius:6px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:border-color 0.2s;}
+    .pe-drop:hover{border-color:var(--col-purple);}
+  </style>
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <div><div class="admin-logo-text"><img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" /></div></div>
+      <span class="admin-logo-tag">Admin</span>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Store</p>
+        <ul>
+          <li><a href="admin-dashboard.html"><span class="nav-icon">▪</span> Dashboard</a></li>
+          <li><a href="admin-featured.html"><span class="nav-icon">▪</span> Featured Products</a></li>
+          <li><a href="admin-categories.html"><span class="nav-icon">▪</span> Categories</a></li>
+          <li><a href="admin-products.html"><span class="nav-icon">▪</span> Products</a></li>
+          <li><a href="admin-pages.html" class="active"><span class="nav-icon">▪</span> Pages</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Orders</p>
+        <ul>
+          <li><a href="admin-orders.html"><span class="nav-icon">▪</span> Orders</a></li>
+          <li><a href="admin-users.html"><span class="nav-icon">▪</span> Users</a></li>
+          <li><a href="admin-reviews.html"><span class="nav-icon">▪</span> Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="admin-sidebar-footer">Global Store Version 1.0.0</div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <span class="admin-topbar-title">Pages</span>
+      <div class="admin-topbar-right">
+        <div class="admin-topbar-user"><div class="admin-avatar">AD</div><span>Admin</span></div>
+        <a href="admin-login.html" class="admin-topbar-signout">Sign out</a>
+      </div>
+    </div>
+    <div class="admin-content">
+      <div class="admin-page-header">
+        <h1 class="admin-page-title">All Pages</h1>
+        <button class="admin-btn-primary" onclick="alert('Page saved!')" style="background:var(--col-purple);border-color:var(--col-purple);">Save Page</button>
+      </div>
+
+      <div class="pages-layout">
+
+        <!-- Page list sidebar -->
+        <div class="pages-sidebar">
+          <p class="pages-sidebar-title">Pages</p>
+          <div class="page-nav-item active" onclick="selectPage(this, 'Home')">🏠 Home</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'Products')">📦 Products</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'About Us')">ℹ️ About Us</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'Contact')">✉️ Contact</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'Reviews')">⭐ Reviews</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'FAQ')">❓ FAQ</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'Privacy Policy')">🔒 Privacy Policy</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'Terms of Service')">📄 Terms of Service</div>
+          <div class="page-nav-item" onclick="selectPage(this, 'Payment Guide')">💳 Payment Guide</div>
+          <div style="padding:12px 18px;border-top:1px solid var(--col-border);margin-top:4px;">
+            <button class="admin-btn-primary" style="font-size:12px;padding:8px 14px;width:100%;">+ New Page</button>
+          </div>
+        </div>
+
+        <!-- Editor -->
+        <div class="pages-editor">
+          <div class="pe-card">
+            <div class="pe-tabs">
+              <div class="pe-tab active" onclick="switchTab(this, 'content')">Page Content</div>
+              <div class="pe-tab" onclick="switchTab(this, 'settings')">Settings</div>
+              <div class="pe-tab" onclick="switchTab(this, 'preview')">Page View ↗</div>
+            </div>
+
+            <!-- Content tab -->
+            <div class="pe-body" id="tab-content">
+              <p style="font-size:12px;color:var(--col-muted);font-weight:600;letter-spacing:0.5px;">Editing: <span id="currentPage" style="color:var(--col-purple-lt);">Home</span></p>
+
+              <div class="pe-field">
+                <label class="pe-label">Page Title</label>
+                <input type="text" class="pe-input" id="pageTitle" placeholder="Page title..." value="Home" />
+              </div>
+
+              <div class="pe-field">
+                <label class="pe-label">Tagline</label>
+                <input type="text" class="pe-input" id="pageTagline" placeholder="Short tagline or subtitle..." value="Built for Precision. Made to Win." />
+              </div>
+
+              <div class="pe-field">
+                <label class="pe-label">Information</label>
+                <textarea class="pe-input pe-textarea" id="pageInfo" placeholder="Main body text or description...">MVXU was founded by competitive players who got tired of settling for peripherals that didn't meet tournament standards. We build for the edge — where every millisecond counts.</textarea>
+              </div>
+
+              <div class="pe-field">
+                <label class="pe-label">Specifications / Additional Content</label>
+                <textarea class="pe-input pe-textarea" style="min-height:80px;" placeholder="Additional details, specs, or structured content..."></textarea>
+              </div>
+
+              <div class="pe-field">
+                <label class="pe-label">Add Image</label>
+                <div class="pe-drop" onclick="alert('File picker')">
+                  <span style="font-size:28px;opacity:0.25;">🖼️</span>
+                  <p style="font-size:13px;color:var(--col-muted);font-weight:600;">Click to upload image</p>
+                  <p style="font-size:11px;color:rgba(255,255,255,0.2);">PNG, JPG, WebP up to 10MB</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settings tab (hidden) -->
+            <div class="pe-body" id="tab-settings" style="display:none;">
+              <div class="pe-field">
+                <label class="pe-label">SEO Title</label>
+                <input type="text" class="pe-input" placeholder="Title shown in browser tab and search results" />
+              </div>
+              <div class="pe-field">
+                <label class="pe-label">Meta Description</label>
+                <textarea class="pe-input pe-textarea" style="min-height:80px;" placeholder="Short description for search engines (max 160 chars)"></textarea>
+              </div>
+              <div class="pe-field">
+                <label class="pe-label">Page URL Slug</label>
+                <input type="text" class="pe-input" placeholder="e.g. about-us" />
+              </div>
+              <div class="pe-field">
+                <label class="pe-label">Visibility</label>
+                <div style="display:flex;gap:10px;">
+                  <button class="ap-toggle active" onclick="toggleBtn(this)" style="flex:1;background:var(--col-purple);border:1px solid var(--col-purple);color:#fff;padding:10px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600;">Public</button>
+                  <button class="ap-toggle" onclick="toggleBtn(this)" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--col-muted);padding:10px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600;">Hidden</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const pageData = {
+  'Home':{'title':'Home','tagline':'Built for Precision. Made to Win.','info':'MVXU was founded by competitive players who got tired of settling for peripherals that didn\'t meet tournament standards.'},
+  'Products':{'title':'Products','tagline':'All Products','info':'Browse our full lineup of precision-engineered gaming peripherals.'},
+  'About Us':{'title':'About Us','tagline':'Engineered for Competition','info':'MVXU is a gaming peripheral brand built for players who take competition seriously.'},
+  'Contact':{'title':'Contact','tagline':'Get in Touch','info':'Whether you have questions about our products, need support, or want to work with us — we\'re here to help.'},
+  'Reviews':{'title':'Reviews','tagline':'What They\'re Saying','info':'Verified buyers. Real setups. No filter.'},
+  'FAQ':{'title':'FAQ','tagline':'Frequently Asked Questions','info':'Find answers to common questions about our products, shipping, and policies.'},
+  'Privacy Policy':{'title':'Privacy Policy','tagline':'Last updated: 27th of March, 2026','info':'mvxu.com is operated by MVXU and sells gaming peripherals.'},
+  'Terms of Service':{'title':'Terms of Service','tagline':'Last Updated: 27th of March, 2026','info':'This Terms of Service sets forth the terms and conditions for using the MVXU online shop.'},
+  'Payment Guide':{'title':'Payment Guide','tagline':'Payment Process','info':'After placing your order, payment instructions will be provided on the checkout page.'},
+};
+
+function selectPage(el, name) {
+  document.querySelectorAll('.page-nav-item').forEach(i=>i.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('currentPage').textContent = name;
+  const d = pageData[name] || {};
+  document.getElementById('pageTitle').value = d.title || name;
+  document.getElementById('pageTagline').value = d.tagline || '';
+  document.getElementById('pageInfo').value = d.info || '';
+}
+
+function switchTab(tab, id) {
+  document.querySelectorAll('.pe-tab').forEach(t=>t.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('tab-content').style.display = id==='content' ? 'flex' : 'none';
+  document.getElementById('tab-settings').style.display = id==='settings' ? 'flex' : 'none';
+  if(id==='preview') { const pg = document.getElementById('currentPage').textContent; const map={'Home':'index.html','Products':'products.html','About Us':'about.html','Contact':'contact.html','Reviews':'reviews.html','Privacy Policy':'privacy.html','Terms of Service':'tos.html','Payment Guide':'payment.html'}; window.open(map[pg]||'index.html','_blank'); tab.classList.remove('active'); document.querySelectorAll('.pe-tab')[0].classList.add('active'); }
+}
+
+function toggleBtn(btn) {
+  btn.closest('div').querySelectorAll('button').forEach(b=>{b.style.background='rgba(255,255,255,0.05)';b.style.borderColor='rgba(255,255,255,0.1)';b.style.color='rgba(255,255,255,0.4)';});
+  btn.style.background='var(--col-purple)';btn.style.borderColor='var(--col-purple)';btn.style.color='#fff';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories – MVXU Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-shell">
+
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <div><div class="admin-logo-text"><img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" /></div></div>
+      <span class="admin-logo-tag">Admin</span>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Store</p>
+        <ul>
+          <li><a href="admin-dashboard.html"><span class="nav-icon">▪</span> Dashboard</a></li>
+          <li><a href="admin-featured.html"><span class="nav-icon">▪</span> Featured Products</a></li>
+          <li><a href="admin-categories.html" class="active"><span class="nav-icon">▪</span> Categories</a></li>
+          <li><a href="admin-products.html"><span class="nav-icon">▪</span> Products</a></li>
+          <li><a href="admin-pages.html"><span class="nav-icon">▪</span> Pages</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Orders</p>
+        <ul>
+          <li><a href="admin-orders.html"><span class="nav-icon">▪</span> Orders</a></li>
+          <li><a href="admin-users.html"><span class="nav-icon">▪</span> Users</a></li>
+          <li><a href="admin-reviews.html"><span class="nav-icon">▪</span> Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="admin-sidebar-footer">Global Store Version 1.0.0</div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <span class="admin-topbar-title">Categories</span>
+      <div class="admin-topbar-right">
+        <div class="admin-topbar-user"><div class="admin-avatar">AD</div><span>Admin</span></div>
+        <a href="admin-login.html" class="admin-topbar-signout">Sign out</a>
+      </div>
+    </div>
+
+    <div class="admin-content">
+      <div class="admin-page-header">
+        <h1 class="admin-page-title">Product Categories</h1>
+        <button class="admin-btn-primary" onclick="alert('New Category modal')">New Category</button>
+      </div>
+
+      <div class="admin-panel">
+
+        <div class="admin-category-row">
+          <div class="admin-category-dot" style="background:#3b82f6;"></div>
+          <div class="admin-category-info">
+            <p class="admin-category-name">Premium Mice</p>
+            <p class="admin-category-meta">3 products · visible</p>
+          </div>
+          <div class="admin-category-actions">
+            <button class="admin-row-btn" onclick="alert('Edit Premium Mice')">Edit</button>
+            <a href="products.html#mice" target="_blank" class="admin-row-btn">View</a>
+          </div>
+        </div>
+
+        <div class="admin-panel-divider"></div>
+
+        <div class="admin-category-row">
+          <div class="admin-category-dot" style="background:#22c55e;"></div>
+          <div class="admin-category-info">
+            <p class="admin-category-name">Hall Effect Keyboards</p>
+            <p class="admin-category-meta">3 products · visible</p>
+          </div>
+          <div class="admin-category-actions">
+            <button class="admin-row-btn" onclick="alert('Edit Hall Effect Keyboards')">Edit</button>
+            <a href="products.html#keyboards" target="_blank" class="admin-row-btn">View</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

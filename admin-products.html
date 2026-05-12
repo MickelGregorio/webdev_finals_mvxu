@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Products – MVXU Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <div><div class="admin-logo-text"><img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" /></div></div>
+      <span class="admin-logo-tag">Admin</span>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Store</p>
+        <ul>
+          <li><a href="admin-dashboard.html"><span class="nav-icon">▪</span> Dashboard</a></li>
+          <li><a href="admin-featured.html"><span class="nav-icon">▪</span> Featured Products</a></li>
+          <li><a href="admin-categories.html"><span class="nav-icon">▪</span> Categories</a></li>
+          <li><a href="admin-products.html" class="active"><span class="nav-icon">▪</span> Products</a></li>
+          <li><a href="admin-pages.html"><span class="nav-icon">▪</span> Pages</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Orders</p>
+        <ul>
+          <li><a href="admin-orders.html"><span class="nav-icon">▪</span> Orders</a></li>
+          <li><a href="admin-users.html"><span class="nav-icon">▪</span> Users</a></li>
+          <li><a href="admin-reviews.html"><span class="nav-icon">▪</span> Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="admin-sidebar-footer">Global Store Version 1.0.0</div>
+  </aside>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <span class="admin-topbar-title">All Products</span>
+      <div class="admin-topbar-right">
+        <div class="admin-topbar-user"><div class="admin-avatar">AD</div><span>Admin</span></div>
+        <a href="admin-login.html" class="admin-topbar-signout">Sign out</a>
+      </div>
+    </div>
+    <div class="admin-content">
+      <div class="admin-page-header">
+        <h1 class="admin-page-title">All Products</h1>
+        <a href="admin-add-product.html" class="admin-btn-primary">Add Product</a>
+      </div>
+      <div class="admin-orders-toolbar">
+        <input type="text" class="admin-search-input" placeholder="Search by name or SKU..." id="pSearch" oninput="filterP()" />
+        <select class="admin-filter-select" id="pCat" onchange="filterP()">
+          <option value="all">All Categories</option>
+          <option value="mice">Premium Mice</option>
+          <option value="keyboard">Hall Effect Keyboards</option>
+        </select>
+        <select class="admin-filter-select" id="pStat" onchange="filterP()">
+          <option value="all">All Statuses</option>
+          <option value="active">Active</option>
+          <option value="lowstock">Low Stock</option>
+        </select>
+      </div>
+      <div class="admin-panel">
+        <table class="admin-table" id="pTable">
+          <thead><tr><th>SKU</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr data-cat="keyboard" data-stat="active" data-search="w80he wooting 80he"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">W80HE</td><td style="font-weight:600;">WOOTING 80HE</td><td class="td-muted">Hall Effect Keyboards</td><td>₱15,490</td><td>58</td><td><span class="status-badge status-shipped">Active</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+            <tr data-cat="mice" data-stat="active" data-search="ssv2 superstrike v2"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">SSV2</td><td style="font-weight:600;">SUPERSTRIKE V2</td><td class="td-muted">Premium Mice</td><td>₱11,945</td><td>73</td><td><span class="status-badge status-shipped">Active</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+            <tr data-cat="mice" data-stat="active" data-search="op18k op1 8k v2 purple"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">OP18K</td><td style="font-weight:600;">OP1 8K V2 PURPLE</td><td class="td-muted">Premium Mice</td><td>₱6,995</td><td>91</td><td><span class="status-badge status-shipped">Active</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+            <tr data-cat="keyboard" data-stat="active" data-search="hv3p huntsman v3 pro"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">HV3P</td><td style="font-weight:600;">HUNTSMAN V3 PRO</td><td class="td-muted">Hall Effect Keyboards</td><td>₱13,490</td><td>40</td><td><span class="status-badge status-shipped">Active</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+            <tr data-cat="mice" data-stat="active" data-search="lmx lamzu maya x"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">LMX</td><td style="font-weight:600;">LAMZU MAYA X</td><td class="td-muted">Premium Mice</td><td>₱5,495</td><td>66</td><td><span class="status-badge status-shipped">Active</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+            <tr data-cat="keyboard" data-stat="active" data-search="hv3p huntsman v3 pro b"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">HV3P</td><td style="font-weight:600;">HUNTSMAN V3 PRO</td><td class="td-muted">Hall Effect Keyboards</td><td>₱13,490</td><td>37</td><td><span class="status-badge status-shipped">Active</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+            <tr data-cat="mice" data-stat="lowstock" data-search="lma lamzu atlantis og v2"><td class="td-muted" style="font-family:var(--font-d);font-weight:700;letter-spacing:1px;">LMA</td><td style="font-weight:600;">LAMZU ATLANTIS (OG V2)</td><td class="td-muted">Premium Mice</td><td>₱5,795</td><td style="color:#e0a020;font-weight:700;">18</td><td><span class="status-badge status-processing">Low Stock</span></td><td><div style="display:flex;gap:6px;"><button class="admin-row-btn" onclick="alert('Edit')">Edit</button><button class="admin-icon-btn danger" onclick="delRow(this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function filterP(){const q=document.getElementById('pSearch').value.toLowerCase();const c=document.getElementById('pCat').value;const s=document.getElementById('pStat').value;document.querySelectorAll('#pTable tbody tr').forEach(r=>{r.style.display=((!q||r.dataset.search.includes(q))&&(c==='all'||r.dataset.cat===c)&&(s==='all'||r.dataset.stat===s))?'':'none';});}
+function delRow(btn){if(confirm('Delete this product?'))btn.closest('tr').remove();}
+</script>
+</body>
+</html>

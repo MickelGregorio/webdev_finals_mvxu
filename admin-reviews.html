@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews – MVXU Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+  <style>
+    .rev-stat-cards{display:flex;gap:16px;margin-bottom:24px;}
+    .rev-stat-card{flex:1;background:var(--col-card);border:1px solid var(--col-border);border-radius:8px;padding:24px 28px;}
+    .rsc-label{font-size:12px;font-weight:600;color:var(--col-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+    .rsc-value{font-family:var(--font-d);font-weight:800;font-size:44px;color:var(--col-white);line-height:1;margin-bottom:10px;}
+    .rsc-sub{font-size:12px;font-weight:600;}
+    .rsc-sub.green{color:var(--col-green);}
+    .rsc-sub.orange{color:#e0a020;}
+    .rating-breakdown{background:var(--col-card);border:1px solid var(--col-border);border-radius:8px;padding:28px 32px;margin-bottom:24px;display:flex;gap:48px;align-items:center;}
+    .rb-left{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;}
+    .rb-num{font-family:var(--font-d);font-weight:800;font-size:72px;color:var(--col-white);line-height:1;}
+    .rb-stars{font-size:20px;color:#e0a020;letter-spacing:3px;}
+    .rb-total{font-size:12px;color:var(--col-muted);font-weight:600;margin-top:2px;}
+    .rb-right{flex:1;display:flex;flex-direction:column;gap:10px;}
+    .rb-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--col-muted);text-transform:uppercase;margin-bottom:4px;}
+    .rb-row{display:flex;align-items:center;gap:12px;}
+    .rb-row-n{font-family:var(--font-d);font-weight:700;font-size:14px;color:rgba(255,255,255,0.4);width:10px;text-align:right;flex-shrink:0;}
+    .rb-track{flex:1;height:8px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;}
+    .rb-fill{height:100%;background:#e0a020;border-radius:4px;transition:width 0.6s ease;}
+    .rb-cnt{font-size:12px;color:var(--col-muted);font-weight:600;width:28px;text-align:right;flex-shrink:0;}
+    .rev-list{display:flex;flex-direction:column;gap:12px;}
+    .rev-card{background:var(--col-card);border:1px solid var(--col-border);border-radius:8px;padding:24px 28px;display:flex;gap:18px;align-items:flex-start;transition:border-color 0.2s;}
+    .rev-card:hover{border-color:rgba(123,47,255,0.2);}
+    .rev-av{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:800;font-size:15px;color:var(--col-muted);flex-shrink:0;}
+    .rev-body{flex:1;}
+    .rev-name{font-family:var(--font-d);font-weight:800;font-size:16px;color:var(--col-white);margin-bottom:2px;}
+    .rev-prod{font-size:12px;font-weight:700;color:var(--col-purple);letter-spacing:0.5px;margin-bottom:10px;}
+    .rev-stars{font-size:15px;color:#e0a020;letter-spacing:2px;margin-bottom:8px;}
+    .rev-text{font-size:14px;color:var(--col-muted);line-height:1.7;}
+    .rev-meta{font-size:11px;color:rgba(255,255,255,0.2);margin-top:8px;}
+    .rev-acts{display:flex;gap:8px;align-items:flex-start;flex-shrink:0;}
+  </style>
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-logo">
+      <div><div class="admin-logo-text"><img src="./logo.png" alt="MVXU" class="logo-img" style="height:28px;width:auto;" /></div></div>
+      <span class="admin-logo-tag">Admin</span>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Store</p>
+        <ul>
+          <li><a href="admin-dashboard.html"><span class="nav-icon">▪</span> Dashboard</a></li>
+          <li><a href="admin-featured.html"><span class="nav-icon">▪</span> Featured Products</a></li>
+          <li><a href="admin-categories.html"><span class="nav-icon">▪</span> Categories</a></li>
+          <li><a href="admin-products.html"><span class="nav-icon">▪</span> Products</a></li>
+          <li><a href="admin-pages.html"><span class="nav-icon">▪</span> Pages</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <p class="admin-nav-heading">Orders</p>
+        <ul>
+          <li><a href="admin-orders.html"><span class="nav-icon">▪</span> Orders</a></li>
+          <li><a href="admin-users.html"><span class="nav-icon">▪</span> Users</a></li>
+          <li><a href="admin-reviews.html" class="active"><span class="nav-icon">▪</span> Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="admin-sidebar-footer">Global Store Version 1.0.0</div>
+  </aside>
+
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <span class="admin-topbar-title">Reviews</span>
+      <div class="admin-topbar-right">
+        <div class="admin-topbar-user"><div class="admin-avatar">AD</div><span>Admin</span></div>
+        <a href="admin-login.html" class="admin-topbar-signout">Sign out</a>
+      </div>
+    </div>
+    <div class="admin-content">
+
+      <div class="rev-stat-cards">
+        <div class="rev-stat-card">
+          <p class="rsc-label">Average Rating</p>
+          <p class="rsc-value">4.7</p>
+          <p class="rsc-sub green">from 312 reviews</p>
+        </div>
+        <div class="rev-stat-card">
+          <p class="rsc-label">Pending for Approval</p>
+          <p class="rsc-value">14</p>
+          <p class="rsc-sub orange">from 312 reviews</p>
+        </div>
+        <div class="rev-stat-card">
+          <p class="rsc-label">Published</p>
+          <p class="rsc-value">312</p>
+          <p class="rsc-sub green">from 312 reviews</p>
+        </div>
+      </div>
+
+      <div class="rating-breakdown">
+        <div class="rb-left">
+          <p class="rb-num">4.7</p>
+          <p class="rb-stars">★★★★<span style="opacity:0.35;">★</span></p>
+          <p class="rb-total">312 total reviews</p>
+        </div>
+        <div class="rb-right">
+          <p class="rb-label">Rating Breakdown</p>
+          <div class="rb-row"><span class="rb-row-n">5</span><div class="rb-track"><div class="rb-fill" style="width:74%;"></div></div><span class="rb-cnt">231</span></div>
+          <div class="rb-row"><span class="rb-row-n">4</span><div class="rb-track"><div class="rb-fill" style="width:16%;"></div></div><span class="rb-cnt">49</span></div>
+          <div class="rb-row"><span class="rb-row-n">3</span><div class="rb-track"><div class="rb-fill" style="width:5%;"></div></div><span class="rb-cnt">17</span></div>
+          <div class="rb-row"><span class="rb-row-n">2</span><div class="rb-track"><div class="rb-fill" style="width:3%;"></div></div><span class="rb-cnt">8</span></div>
+          <div class="rb-row"><span class="rb-row-n">1</span><div class="rb-track"><div class="rb-fill" style="width:2%;"></div></div><span class="rb-cnt">7</span></div>
+        </div>
+      </div>
+
+      <div class="rev-list">
+        <div class="rev-card">
+          <div class="rev-av">DP</div>
+          <div class="rev-body">
+            <p class="rev-name">D. Park</p>
+            <p class="rev-prod">OP1 8k V2</p>
+            <p class="rev-stars">★★★★★</p>
+            <p class="rev-text">Honestly the OP1 8K V2 is the most refined wired FPS mouse I've used so far. The feel in-hand is extremely controlled — no weird inconsistencies in movement, no "off" spots in tracking, just pure, uniform glide across the entire pad. Micro-adjustments feel effortless and my crosshair stability noticeably improved after switching from my previous mouse.</p>
+            <p class="rev-meta">Apr 28, 2026 · Verified purchase</p>
+          </div>
+          <div class="rev-acts">
+            <span class="status-badge status-shipped">Published</span>
+            <button class="admin-icon-btn danger" title="Delete" onclick="this.closest('.rev-card').remove()">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="rev-card">
+          <div class="rev-av">JK</div>
+          <div class="rev-body">
+            <p class="rev-name">JUNI "KRAKENX"</p>
+            <p class="rev-prod">Superstrike V2 <span style="color:var(--col-purple-lt);font-size:11px;">· VCT Participant</span></p>
+            <p class="rev-stars">★★★★★</p>
+            <p class="rev-text">First wireless mouse I've trusted at LAN. The MVXU LINK is genuinely indistinguishable from wired, and I've been playing on it through every stage of VCT this split.</p>
+            <p class="rev-meta">Apr 25, 2026 · Pro Player</p>
+          </div>
+          <div class="rev-acts">
+            <span class="status-badge status-shipped">Published</span>
+            <button class="admin-icon-btn danger" title="Delete" onclick="this.closest('.rev-card').remove()">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="rev-card">
+          <div class="rev-av">MR</div>
+          <div class="rev-body">
+            <p class="rev-name">Mark R.</p>
+            <p class="rev-prod">OP1 8K V2</p>
+            <p class="rev-stars">★★★★★</p>
+            <p class="rev-text">The honeycomb feels premium. Best mouse I've owned.</p>
+            <p class="rev-meta">Apr 20, 2026 · Verified purchase</p>
+          </div>
+          <div class="rev-acts">
+            <span class="status-badge status-pending" id="badge-mr">Pending</span>
+            <button class="admin-icon-btn" title="Approve" onclick="approveReview(this)" style="color:var(--col-green);font-size:16px;font-weight:700;">✓</button>
+            <button class="admin-icon-btn danger" title="Delete" onclick="this.closest('.rev-card').remove()">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="rev-card">
+          <div class="rev-av">SL</div>
+          <div class="rev-body">
+            <p class="rev-name">Sofia L.</p>
+            <p class="rev-prod">Lamzu Maya X</p>
+            <p class="rev-stars">★★★★★</p>
+            <p class="rev-text">Flawless sensor, perfect shape.</p>
+            <p class="rev-meta">Apr 15, 2026 · Verified purchase</p>
+          </div>
+          <div class="rev-acts">
+            <span class="status-badge status-pending">Pending</span>
+            <button class="admin-icon-btn" title="Approve" onclick="approveReview(this)" style="color:var(--col-green);font-size:16px;font-weight:700;">✓</button>
+            <button class="admin-icon-btn danger" title="Delete" onclick="this.closest('.rev-card').remove()">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function approveReview(btn) {
+  const acts = btn.closest('.rev-acts');
+  acts.querySelector('.status-badge').className = 'status-badge status-shipped';
+  acts.querySelector('.status-badge').textContent = 'Published';
+  btn.remove();
+}
+</script>
+</body>
+</html>
